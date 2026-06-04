@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# av-drone-portfolio
 
-## Getting Started
+Web portfolio para Natalia Mora, creadora audiovisual especializada en fotografia y video aereo con dron.
 
-First, run the development server:
+Creado por el desarrollador de software Isaac Marroqui.
+
+Estado del proyecto: version 1 de diseno.
+
+## Objetivo
+
+Captar nuevos clientes, mostrar trabajos reales y centralizar la presencia profesional en una web clara, visual y preparada para evolucionar hacia contenido gestionado con CMS.
+
+## Stack
+
+- Next.js App Router
+- React
+- TypeScript
+- TailwindCSS
+- shadcn/ui
+- Vercel como destino de despliegue
+
+## Estructura actual
+
+- Inicio con hero, servicios y resumen de trabajos realizados.
+- Portfolio con selector de categorias y cards visuales.
+- Servicios organizados por tipo de cliente y necesidad.
+- Sobre mi con perfil, experiencia, equipo y confianza profesional.
+- Contacto con formulario e informacion de contacto.
+
+## Rutas
+
+- `/` Inicio
+- `/portfolio` Portfolio
+- `/servicios` Servicios
+- `/sobre-mi` Sobre mi
+- `/contacto` Contacto
+
+## Desarrollo local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Comprobaciones
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Notas de la version 1
 
-To learn more about Next.js, take a look at the following resources:
+- Se ha fijado una base visual minimalista y coherente entre todas las paginas.
+- El portfolio usa categorias madre y subcategorias para mantener la relacion con servicios.
+- La imagen del card de portfolio ocupa todo el header superior.
+- La web esta lista para conectar CMS, formularios y contenido dinamico en fases posteriores.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Siguiente fase
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Sanity CMS para trabajos y servicios.
+- Resend para el formulario de contacto.
+- Integracion completa de YouTube y contenido dinamico.
+- SEO local, sitemap y metadatos por pagina.
