@@ -19,7 +19,13 @@ export default function Portfolio() {
   }, []);
 
   const categories = Array.from(
-    new Set(worksData.map((work) => work.serviceCategory)),
+    new Set(
+      worksData
+        .map((work) => work.serviceCategory)
+        .filter((category): category is string =>
+          Boolean(category && category.trim()),
+        ),
+    ),
   );
   const allCategories = ["Mostrar todos", ...categories];
   const [selectedCategory, setSelectedCategory] =

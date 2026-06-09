@@ -1,18 +1,20 @@
 import Image from "next/image";
-import { Play } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Work } from "@/types/works";
-import { urlFor } from "@/sanity/lib/image";
+import { safeUrlFor } from "@/sanity/lib/image";
+import Link from "next/link";
+import type { SanityImageSource } from "@sanity/image-url";
 
 interface WorkCardProps {
   work: Work;
 }
 
-function urlForImage(source?: string | null) {
-  if (source == null) {
+function urlForImage(source?: SanityImageSource | null) {
+  const builder = safeUrlFor(source);
+  if (!builder) {
     return "/images/placeholder-work.jpg";
   }
-  return urlFor(source).url() ?? "/images/placeholder-work.jpg";
+  return builder.url() ?? "/images/placeholder-work.jpg";
 }
 
 export default function WorkCard({ work }: WorkCardProps) {
@@ -44,15 +46,12 @@ export default function WorkCard({ work }: WorkCardProps) {
           Produccion audiovisual aerea orientada a resultados visuales de alto
           impacto.
         </p>
-        <a
-          href={work.youtubeUrl}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          href={`/portfolio/${work.slug}`}
           className="mt-5 inline-flex items-center gap-2 border border-zinc-900 px-4 py-2 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-900 hover:text-white"
         >
-          Ver video
-          <Play className="h-4 w-4" />
-        </a>
+          Ver más
+        </Link>
       </CardContent>
     </Card>
   );

@@ -1,3 +1,5 @@
+import type { SanityImageSource } from "@sanity/image-url";
+
 export interface Work {
   _id: string;
   title: string;
@@ -5,9 +7,9 @@ export interface Work {
   description: string;
   serviceCategory: string;
   subcategory: string;
-  coverImage: string;
+  coverImage: SanityImageSource | null;
   location?: string;
-  gallery: string[];
+  gallery: SanityImageSource[];
   youtubeUrl: string;
   publishedAt: string;
   featured: boolean;

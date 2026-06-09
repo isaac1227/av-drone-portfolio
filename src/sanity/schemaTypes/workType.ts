@@ -10,6 +10,7 @@ export const workType = defineType({
       name: "title",
       title: "Título",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -19,12 +20,14 @@ export const workType = defineType({
       options: {
         source: "title",
       },
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: "description",
       title: "Descripción",
       type: "text",
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -39,6 +42,7 @@ export const workType = defineType({
           { title: "Fotografía Aérea", value: "fotografia" },
         ],
       },
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -48,12 +52,14 @@ export const workType = defineType({
       components: {
         input: SubcategoryInput,
       },
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: "location",
       title: "Ubicación",
       type: "string",
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
@@ -81,6 +87,7 @@ export const workType = defineType({
       name: "publishedAt",
       title: "Fecha publicación",
       type: "datetime",
+      validation: (Rule) => Rule.required(),
     }),
 
     defineField({
