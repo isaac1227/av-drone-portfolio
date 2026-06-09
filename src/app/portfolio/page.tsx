@@ -1,27 +1,37 @@
 "use client";
 
 import WorkCard from "@/components/portfolio/WorkCard";
-import { works } from "@/data/works";
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import { getWorks } from "@/sanity/lib/works";
 
 export default function Portfolio() {
-  const categories = useMemo(
-    () => [
-      "TODOS",
-      ...Array.from(new Set(works.map((work) => work.serviceCategory))),
-    ],
-    [],
-  );
-  const [selectedCategory, setSelectedCategory] = useState("TODOS");
+  const [worksData, setWorksData] = useState<
+    Awaited<ReturnType<typeof getWorks>>
+  >([]);
 
-  const filteredWorks = useMemo(
-    () =>
-      selectedCategory === "TODOS"
-        ? works
-        : works.filter((work) => work.serviceCategory === selectedCategory),
-    [selectedCategory],
-  );
+  useEffect(() => {
+    const loadWorks = async () => {
+      const data = await getWorks();
+      setWorksData(data);
+    };
 
+    loadWorks();
+  }, []);
+
+  const categories = Array.from(
+    new Set(worksData.map((work) => work.serviceCategory)),
+  );
+  const allCategories = ["Mostrar todos", ...categories];
+  const [selectedCategory, setSelectedCategory] =
+    useState<string>("Mostrar todos");
+  const activeCategory = allCategories.includes(selectedCategory)
+    ? selectedCategory
+    : "Mostrar todos";
+
+  const filteredWorks =
+    activeCategory === "Mostrar todos"
+      ? worksData
+      : worksData.filter((work) => work.serviceCategory === activeCategory);
   return (
     <main className="bg-zinc-100 px-6 pb-20 pt-24 lg:pt-28">
       <section className="mx-auto max-w-7xl">
@@ -33,8 +43,8 @@ export default function Portfolio() {
 
         <div className="mt-14 border-b border-zinc-300 pb-4">
           <div className="flex flex-wrap items-center gap-7">
-            {categories.map((category) => {
-              const isActive = selectedCategory === category;
+            {allCategories.map((category) => {
+              const isActive = activeCategory === category;
 
               return (
                 <button
@@ -56,13 +66,7 @@ export default function Portfolio() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredWorks.map((work) => (
-            <WorkCard
-              key={work.id}
-              title={work.title}
-              category={work.serviceCategory}
-              subcategory={work.subcategory}
-              youtubeUrl={work.youtubeUrl}
-            />
+            <WorkCard key={work._id} work={work} />
           ))}
         </div>
       </section>
