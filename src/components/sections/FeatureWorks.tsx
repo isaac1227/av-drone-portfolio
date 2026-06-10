@@ -29,29 +29,12 @@ export default async function FeatureWorks() {
   const featuredWorks = await getFeaturedWorks();
 
   return (
-    <section className="bg-white border-b border-zinc-200 py-16 sm:py-20">
-      <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <h2 className="text-4xl tracking-tight text-zinc-950 sm:text-5xl">
-          Trabajos destacados
-        </h2>
-
-        {featuredWorks.length === 0 ? (
-          <div className="mt-14 border border-zinc-300 bg-white p-8 sm:p-12">
-            <p className="text-sm uppercase tracking-[0.2em] text-zinc-400">
-              Sin destacados
-            </p>
-            <p className="mt-4 max-w-[48ch] text-2xl leading-relaxed text-zinc-600">
-              Aun no hay trabajos marcados como destacados en Sanity. Activa el
-              campo featured para mostrarlos aqui automaticamente.
-            </p>
-            <Link
-              href="/portfolio"
-              className="mt-8 inline-flex items-center border border-zinc-900 px-5 py-3 text-sm font-medium uppercase tracking-[0.12em] text-zinc-900 transition-colors hover:bg-zinc-900 hover:text-white"
-            >
-              Ver portfolio completo
-            </Link>
-          </div>
-        ) : (
+    featuredWorks.length > 0 && (
+      <section className="bg-white border-b border-zinc-200 py-16 sm:py-20">
+        <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
+          <h2 className="text-4xl tracking-tight text-zinc-950 sm:text-5xl">
+            Trabajos destacados
+          </h2>
           <div className="mt-14 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {featuredWorks.map((work) => (
               <article
@@ -85,8 +68,8 @@ export default async function FeatureWorks() {
               </article>
             ))}
           </div>
-        )}
-      </div>
-    </section>
+        </div>
+      </section>
+    )
   );
 }
