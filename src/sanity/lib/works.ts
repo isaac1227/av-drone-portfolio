@@ -1,5 +1,5 @@
 import { client } from "./client";
-import { worksQuery, workBySlugQuery } from "./queries";
+import { worksQuery, workBySlugQuery, featuredWorksQuery } from "./queries";
 import { Work } from "@/types/works";
 
 export async function getWorks(): Promise<Work[]> {
@@ -8,4 +8,8 @@ export async function getWorks(): Promise<Work[]> {
 
 export async function getWorkBySlug(slug: string): Promise<Work | null> {
   return client.fetch(workBySlugQuery, { slug });
+}
+
+export async function getFeaturedWorks(): Promise<Work[]> {
+  return client.fetch(featuredWorksQuery);
 }
