@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import WorkCard from "@/components/portfolio/WorkCard";
 import { useEffect, useState } from "react";
 import { getWorks } from "@/sanity/lib/works";
@@ -38,17 +40,23 @@ export default function Portfolio() {
     activeCategory === "Mostrar todos"
       ? worksData
       : worksData.filter((work) => work.serviceCategory === activeCategory);
+
   return (
-    <main className="bg-zinc-100 px-6 pb-20 pt-24 lg:pt-28">
+    <main className="px-6 pb-20 pt-16 lg:px-10 lg:pt-20">
       <section className="mx-auto max-w-7xl">
-        <h1 className="text-6xl tracking-tight text-zinc-950">Portfolio</h1>
-        <p className="mt-12 text-4xl leading-[1.25] text-zinc-500">
-          Seleccion de proyectos audiovisuales capturados desde una perspectiva
-          aerea unica.
+        <p className="font-heading text-xs uppercase tracking-[0.36em] text-brand/80">
+          Portfolio
+        </p>
+        <h1 className="mt-4 max-w-[10ch] font-heading text-5xl font-semibold tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
+          Proyectos con precisión visual y presencia cinematográfica.
+        </h1>
+        <p className="mt-8 max-w-2xl text-lg leading-8 text-text-soft sm:text-xl">
+          Selección de trabajos audiovisuales capturados desde una perspectiva
+          aérea limpia, premium y alineada con objetivos de marca.
         </p>
 
-        <div className="mt-14 border-b border-zinc-300 pb-4">
-          <div className="flex flex-wrap items-center gap-7">
+        <div className="mt-14 border-b border-white/10 pb-4">
+          <div className="flex flex-wrap items-center gap-3">
             {allCategories.map((category) => {
               const isActive = activeCategory === category;
 
@@ -57,13 +65,13 @@ export default function Portfolio() {
                   key={category}
                   type="button"
                   onClick={() => setSelectedCategory(category)}
-                  className={`border-b-2 pb-2 text-lg tracking-wide transition-colors ${
+                  className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
                     isActive
-                      ? "border-zinc-950 font-semibold text-zinc-950"
-                      : "border-transparent text-zinc-400 hover:text-zinc-700"
+                      ? "border-brand/40 bg-brand/10 text-brand"
+                      : "border-white/10 bg-white/[0.02] text-text-subtle hover:border-white/20 hover:text-foreground"
                   }`}
                 >
-                  {category.toUpperCase()}
+                  {category}
                 </button>
               );
             })}

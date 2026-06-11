@@ -13,7 +13,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="mt-6 inline-flex h-14 w-full items-center justify-center border border-zinc-950 bg-zinc-950 px-8 text-lg font-medium text-white transition-colors hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+      className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-brand px-6 text-sm font-semibold text-brand-foreground transition-all hover:-translate-y-0.5 hover:bg-[#49b8ff] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
     >
       {pending ? "Enviando..." : "Enviar solicitud"}
     </button>
@@ -27,14 +27,19 @@ export default function ContactForm() {
   );
 
   return (
-    <form className="border-t border-zinc-300 pt-8" action={formAction}>
-      <h2 className="text-3xl tracking-tight text-zinc-900">Formulario</h2>
+    <form
+      className="rounded-[1.75rem] border border-white/10 bg-surface/90 p-6 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)]"
+      action={formAction}
+    >
+      <h2 className="font-heading text-3xl tracking-tight text-foreground">
+        Formulario
+      </h2>
 
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         <div className="sm:col-span-1">
           <label
             htmlFor="nombre"
-            className="mb-1 block text-sm font-medium text-zinc-700"
+            className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-text-subtle"
           >
             Nombre
           </label>
@@ -45,14 +50,14 @@ export default function ContactForm() {
             required
             minLength={2}
             placeholder="Tu nombre"
-            className="w-full border border-zinc-300 bg-white px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-zinc-900"
+            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-base text-foreground outline-none transition focus:border-brand/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-brand/20"
           />
         </div>
 
         <div className="sm:col-span-1">
           <label
             htmlFor="email"
-            className="mb-1 block text-sm font-medium text-zinc-700"
+            className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-text-subtle"
           >
             Email
           </label>
@@ -62,14 +67,14 @@ export default function ContactForm() {
             type="email"
             required
             placeholder="tu@email.com"
-            className="w-full border border-zinc-300 bg-white px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-zinc-900"
+            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-base text-foreground outline-none transition focus:border-brand/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-brand/20"
           />
         </div>
 
         <div className="sm:col-span-2">
           <label
             htmlFor="mensaje"
-            className="mb-1 block text-sm font-medium text-zinc-700"
+            className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-text-subtle"
           >
             Mensaje
           </label>
@@ -79,8 +84,8 @@ export default function ContactForm() {
             required
             minLength={10}
             rows={5}
-            placeholder="Cuentanos que necesitas y cuando te gustaria realizarlo"
-            className="w-full border border-zinc-300 bg-white px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-zinc-900"
+            placeholder="Cuéntanos qué necesitas y cuándo te gustaría realizarlo"
+            className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-base text-foreground outline-none transition focus:border-brand/50 focus:bg-white/[0.08] focus:ring-2 focus:ring-brand/20"
           />
         </div>
       </div>
@@ -89,7 +94,7 @@ export default function ContactForm() {
         <p
           aria-live="polite"
           className={`mt-4 text-sm ${
-            state.status === "success" ? "text-emerald-700" : "text-red-700"
+            state.status === "success" ? "text-emerald-400" : "text-red-400"
           }`}
         >
           {state.message}

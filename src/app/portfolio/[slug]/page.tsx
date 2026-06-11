@@ -84,75 +84,75 @@ export default async function WorkPage({
   const youtubeEmbedUrl = getYouTubeEmbedUrl(work.youtubeUrl);
 
   return (
-    <main className="bg-white pb-20 pt-24 lg:pt-28">
-      <section className="mx-auto max-w-7xl px-6">
+    <main className="px-6 pb-20 pt-16 lg:px-10 lg:pt-20">
+      <section className="mx-auto max-w-7xl">
         <Link
           href="/portfolio"
-          className="text-sm uppercase tracking-[0.24em] text-zinc-400 transition-colors hover:text-zinc-900"
+          className="text-sm uppercase tracking-[0.24em] text-text-subtle transition-colors hover:text-foreground"
         >
           Volver al portfolio
         </Link>
 
-        <div className="mt-8 grid gap-10 border-t border-zinc-200 pt-10 lg:grid-cols-[minmax(0,1.2fr)_22rem] lg:items-start">
+        <div className="mt-8 grid gap-10 border-t border-white/10 pt-10 lg:grid-cols-[minmax(0,1.2fr)_22rem] lg:items-start">
           <div>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center border border-zinc-300 px-3 py-1 text-xs uppercase tracking-[0.2em] text-zinc-500">
+              <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs uppercase tracking-[0.2em] text-text-subtle">
                 {formatCategory(work.serviceCategory)}
               </span>
               {work.subcategory && (
-                <span className="inline-flex items-center border border-zinc-300 px-3 py-1 text-xs uppercase tracking-[0.2em] text-zinc-500">
+                <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs uppercase tracking-[0.2em] text-text-subtle">
                   {work.subcategory}
                 </span>
               )}
               {work.featured && (
-                <span className="inline-flex items-center bg-zinc-950 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white">
+                <span className="inline-flex items-center rounded-full bg-brand px-3 py-1 text-xs uppercase tracking-[0.2em] text-brand-foreground">
                   Destacado
                 </span>
               )}
             </div>
 
-            <h1 className="mt-6 max-w-[12ch] text-5xl leading-[0.95] tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-[12ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
               {work.title}
             </h1>
 
-            <p className="mt-8 max-w-[56ch] text-xl leading-relaxed text-zinc-500 sm:text-2xl">
+            <p className="mt-8 max-w-[56ch] text-lg leading-8 text-text-soft sm:text-xl">
               {work.description}
             </p>
           </div>
 
-          <aside className="border-t border-zinc-200 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-1">
+          <aside className="rounded-[1.75rem] border border-white/10 bg-surface/90 p-6 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)] lg:pt-6">
             <dl className="space-y-6">
               {work.location && (
                 <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-zinc-400">
-                    Ubicacion
+                  <dt className="text-xs uppercase tracking-[0.2em] text-text-subtle">
+                    Ubicación
                   </dt>
-                  <dd className="mt-2 text-lg text-zinc-800">
+                  <dd className="mt-2 text-lg text-foreground">
                     {work.location}
                   </dd>
                 </div>
               )}
               {work.publishedAt && (
                 <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+                  <dt className="text-xs uppercase tracking-[0.2em] text-text-subtle">
                     Publicado
                   </dt>
-                  <dd className="mt-2 text-lg text-zinc-800">
+                  <dd className="mt-2 text-lg text-foreground">
                     {formatPublishedAt(work.publishedAt)}
                   </dd>
                 </div>
               )}
               <div>
-                <dt className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+                <dt className="text-xs uppercase tracking-[0.2em] text-text-subtle">
                   Proyecto
                 </dt>
-                <dd className="mt-2 text-lg text-zinc-800">{work._id}</dd>
+                <dd className="mt-2 text-lg text-foreground">{work._id}</dd>
               </div>
             </dl>
           </aside>
         </div>
 
-        <div className="relative mt-14 overflow-hidden border border-zinc-200 bg-zinc-100">
+        <div className="relative mt-14 overflow-hidden rounded-[2rem] border border-white/10 bg-surface/90 shadow-[0_24px_80px_-46px_rgba(0,0,0,0.8)]">
           <div className="relative aspect-[16/10] w-full">
             <Image
               src={heroImage}
@@ -167,16 +167,16 @@ export default async function WorkPage({
 
         <div className="mt-16 grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
           <section>
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+            <p className="text-xs uppercase tracking-[0.2em] text-text-subtle">
               Resumen
             </p>
-            <p className="mt-4 max-w-[60ch] text-lg leading-8 text-zinc-600">
+            <p className="mt-4 max-w-[60ch] text-lg leading-8 text-text-soft">
               Este proyecto combina planificacion de vuelo, criterio visual y
               ejecucion en campo para producir una pieza que muestra el espacio
               desde una perspectiva aérea clara, atractiva y útil para su
               comunicación.
             </p>
-            <p className="mt-5 max-w-[60ch] text-lg leading-8 text-zinc-600">
+            <p className="mt-5 max-w-[60ch] text-lg leading-8 text-text-soft">
               La seleccion visual se ha planteado para dar contexto, escala y
               recorrido al trabajo, manteniendo una lectura limpia tanto en
               escritorio como en movil.
@@ -185,10 +185,10 @@ export default async function WorkPage({
 
           {youtubeEmbedUrl ? (
             <section>
-              <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+              <p className="text-xs uppercase tracking-[0.2em] text-text-subtle">
                 Video
               </p>
-              <div className="mt-4 overflow-hidden border border-zinc-200 bg-zinc-950">
+              <div className="mt-4 overflow-hidden rounded-[1.5rem] border border-white/10 bg-black">
                 <iframe
                   className="aspect-video w-full"
                   src={youtubeEmbedUrl}
@@ -203,17 +203,17 @@ export default async function WorkPage({
         </div>
 
         {gallery.length > 0 && (
-          <section className="mt-16 border-t border-zinc-200 pt-10">
+          <section className="mt-16 border-t border-white/10 pt-10">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+                <p className="text-xs uppercase tracking-[0.2em] text-text-subtle">
                   Galeria
                 </p>
-                <h2 className="mt-3 text-3xl tracking-tight text-zinc-950 sm:text-4xl">
+                <h2 className="mt-3 font-heading text-3xl tracking-tight text-foreground sm:text-4xl">
                   Seleccion visual del proyecto
                 </h2>
               </div>
-              <p className="hidden text-sm text-zinc-400 md:block">
+              <p className="hidden text-sm text-text-subtle md:block">
                 {gallery.length} imagenes
               </p>
             </div>
@@ -222,7 +222,7 @@ export default async function WorkPage({
               {gallery.map((image, index) => (
                 <div
                   key={`${work._id}-gallery-${index}`}
-                  className="relative overflow-hidden border border-zinc-200 bg-zinc-100"
+                  className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-surface/80"
                 >
                   <div className="relative aspect-[4/3] w-full">
                     <Image
@@ -239,22 +239,22 @@ export default async function WorkPage({
           </section>
         )}
 
-        <section className="mt-16 border-t border-zinc-200 pt-8">
+        <section className="mt-16 border-t border-white/10 pt-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-2xl tracking-tight text-zinc-950">
+              <p className="font-heading text-2xl tracking-tight text-foreground">
                 ¿Necesitas una pieza similar para tu proyecto?
               </p>
-              <p className="mt-2 text-zinc-500">
+              <p className="mt-2 text-text-subtle">
                 Puedo adaptar el enfoque visual al tipo de espacio, evento o
                 activo que quieras mostrar.
               </p>
             </div>
             <Link
               href="/contacto"
-              className="inline-flex items-center justify-center border border-zinc-950 px-5 py-3 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-950 hover:text-white"
+              className="inline-flex items-center justify-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-brand-foreground transition-all hover:-translate-y-0.5 hover:bg-[#49b8ff]"
             >
-              Solicitar informacion
+              Solicitar información
             </Link>
           </div>
         </section>

@@ -8,48 +8,59 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: "/", label: "INICIO" },
-    { href: "/servicios", label: "SERVICIOS" },
-    { href: "/portfolio", label: "PORTFOLIO" },
-    { href: "/sobre-mi", label: "SOBRE MI" },
-    { href: "/contacto", label: "CONTACTO" },
+    { href: "/", label: "Inicio" },
+    { href: "/servicios", label: "Servicios" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/sobre-mi", label: "Sobre mí" },
+    { href: "/contacto", label: "Contacto" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-zinc-200 bg-[#f8f8f8]/95 backdrop-blur">
+    <nav className="sticky top-0 z-50 border-b border-white/10 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="flex h-20 items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="flex h-20 items-center justify-between gap-4">
+          <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/logo/logo-principal-removebg-preview.png"
+              src="/images/logo/logo-principal-blanco-sin-fondo.png"
               alt="NATT Aerial Studio Logo"
               width={40}
               height={40}
-              className="object-contain"
+              className="rounded-full object-contain ring-1 ring-white/10"
             />
-            <span className="text-[2rem] font-medium tracking-tight text-zinc-900">
-              NATT Aerial Studio
+            <span className="flex flex-col leading-none">
+              <span className="font-heading text-[0.72rem] uppercase tracking-[0.38em] text-white/55">
+                NATT
+              </span>
+              <span className="text-sm font-medium tracking-[0.22em] text-foreground/90">
+                Aerial Studio
+              </span>
             </span>
-          </div>
+          </Link>
 
-          <div className="hidden items-center gap-10 lg:flex">
+          <div className="hidden items-center gap-8 lg:flex">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg font-medium text-zinc-400 transition hover:text-zinc-700"
+                className="text-sm font-medium uppercase tracking-[0.22em] text-text-subtle transition hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/contacto"
+              className="inline-flex h-10 items-center justify-center rounded-full bg-brand px-5 text-sm font-semibold text-brand-foreground transition-all hover:-translate-y-0.5 hover:bg-[#49b8ff]"
+            >
+              Solicitar briefing
+            </Link>
           </div>
 
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            aria-label="Abrir o cerrar menu de navegacion"
+            aria-label="Abrir o cerrar menú de navegación"
             aria-expanded={isOpen}
-            className="inline-flex items-center justify-center rounded-lg border border-zinc-300 p-2 text-zinc-600 transition hover:bg-zinc-100 lg:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-3 text-foreground transition hover:bg-white/10 lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -69,17 +80,24 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="space-y-1 border-t border-zinc-200 py-4 lg:hidden">
+          <div className="space-y-2 border-t border-white/10 py-5 lg:hidden">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block rounded-md px-3 py-2 text-base font-medium text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-900"
+                className="block rounded-2xl px-4 py-3 text-sm font-medium uppercase tracking-[0.18em] text-text-subtle transition hover:bg-white/5 hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/contacto"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-full bg-brand px-5 text-sm font-semibold text-brand-foreground transition-all hover:bg-[#49b8ff]"
+            >
+              Solicitar briefing
+            </Link>
           </div>
         )}
       </div>

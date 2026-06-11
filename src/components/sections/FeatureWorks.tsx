@@ -30,39 +30,51 @@ export default async function FeatureWorks() {
 
   return (
     featuredWorks.length > 0 && (
-      <section className="bg-white border-b border-zinc-200 py-16 sm:py-20">
+      <section className="border-y border-white/10 bg-white/[0.02] py-16 sm:py-20">
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
-          <h2 className="text-4xl tracking-tight text-zinc-950 sm:text-5xl">
-            Trabajos destacados
-          </h2>
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="font-heading text-xs uppercase tracking-[0.36em] text-brand/80">
+                Portfolio
+              </p>
+              <h2 className="mt-4 font-heading text-4xl tracking-tight text-foreground sm:text-5xl">
+                Trabajos destacados
+              </h2>
+            </div>
+            <p className="max-w-lg text-base leading-7 text-text-subtle">
+              Selección de piezas realizadas para proyectos que necesitan una
+              imagen sólida, clara y con presencia cinematográfica.
+            </p>
+          </div>
           <div className="mt-14 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {featuredWorks.map((work) => (
               <article
                 key={work._id}
-                className="overflow-hidden border border-zinc-200 bg-white"
+                className="group/card overflow-hidden rounded-[1.75rem] border border-white/10 bg-surface/90 shadow-[0_24px_80px_-46px_rgba(0,0,0,0.8)]"
               >
-                <div className="relative aspect-[4/3] w-full">
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <Image
                     src={getImageUrl(work.coverImage)}
                     alt={work.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover/card:scale-105"
                   />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,15,18,0.1),rgba(13,15,18,0.6))]" />
                 </div>
 
                 <div className="p-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-zinc-400">
+                  <p className="text-xs uppercase tracking-[0.26em] text-brand/80">
                     {formatCategory(work.serviceCategory)}
                   </p>
-                  <h3 className="mt-3 text-2xl tracking-tight text-zinc-950">
+                  <h3 className="mt-3 font-heading text-2xl tracking-tight text-foreground">
                     {work.title}
                   </h3>
 
                   <Link
                     href={`/portfolio/${work.slug}`}
-                    className="mt-6 inline-flex items-center border border-zinc-900 px-4 py-2 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-900 hover:text-white"
+                    className="mt-6 inline-flex items-center rounded-full border border-brand/25 bg-brand/10 px-4 py-2 text-sm font-medium text-brand transition-all hover:border-brand/40 hover:bg-brand/15"
                   >
-                    Ver mas
+                    Ver más
                   </Link>
                 </div>
               </article>

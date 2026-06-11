@@ -1,44 +1,49 @@
 export default function SobreMi() {
   return (
-    <main className="bg-white px-6 pb-20 pt-24 lg:pt-28">
+    <main className="px-6 pb-20 pt-16 lg:px-10 lg:pt-20">
       <section className="mx-auto max-w-7xl">
         <div>
-          <h1 className="max-w-[12ch] text-5xl leading-[1.03] tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl">
+          <p className="font-heading text-xs uppercase tracking-[0.36em] text-brand/80">
+            Sobre mí
+          </p>
+          <h1 className="mt-4 max-w-[12ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
             Sobre mi
           </h1>
-          <p className="mt-8 max-w-[55ch] text-xl leading-relaxed text-zinc-500">
+          <p className="mt-8 max-w-[55ch] text-lg leading-8 text-text-soft sm:text-xl">
             Natalia, creadora audiovisual especializada en fotografía y video
             aéreo con dron. Combino técnica, sensibilidad visual y enfoque
             comercial para proyectos que necesitan impacto real.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-12 md:grid-cols-2">
-          <article className="border-t border-zinc-300 pt-8">
-            <h2 className="text-3xl tracking-tight text-zinc-900">Historia</h2>
-            <p className="mt-4 text-lg leading-relaxed text-zinc-600">
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
+          <article className="rounded-[1.75rem] border border-white/10 bg-surface/90 p-6 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)]">
+            <h2 className="font-heading text-3xl tracking-tight text-foreground">
+              Historia
+            </h2>
+            <p className="mt-4 text-base leading-7 text-text-soft">
               Inicié este camino para mostrar lugares y proyectos desde una
               perspectiva diferente. Con cada vuelo busco transformar espacios
               en narrativas visuales que conecten con las personas.
             </p>
           </article>
 
-          <article className="border-t border-zinc-300 pt-8">
-            <h2 className="text-3xl tracking-tight text-zinc-900">
+          <article className="rounded-[1.75rem] border border-white/10 bg-surface/90 p-6 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)]">
+            <h2 className="font-heading text-3xl tracking-tight text-foreground">
               Experiencia
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-zinc-600">
+            <p className="mt-4 text-base leading-7 text-text-soft">
               He trabajado con inmobiliarias, alojamientos turísticos,
               organizadores de eventos y negocios que necesitan contenido
               audiovisual profesional para vender mejor sus servicios.
             </p>
           </article>
 
-          <article className="border-t border-zinc-300 pt-8">
-            <h2 className="text-3xl tracking-tight text-zinc-900">
+          <article className="rounded-[1.75rem] border border-white/10 bg-surface/90 p-6 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)]">
+            <h2 className="font-heading text-3xl tracking-tight text-foreground">
               Servicios clave
             </h2>
-            <ul className="mt-4 space-y-2 text-lg text-zinc-600">
+            <ul className="mt-4 space-y-2 text-base text-text-soft">
               <li>- Fotografía aérea profesional</li>
               <li>- Video aéreo para marketing y eventos</li>
               <li>- Cobertura para parcelas y terrenos</li>
@@ -46,11 +51,11 @@ export default function SobreMi() {
             </ul>
           </article>
 
-          <article className="border-t border-zinc-300 pt-8">
-            <h2 className="text-3xl tracking-tight text-zinc-900">
+          <article className="rounded-[1.75rem] border border-white/10 bg-surface/90 p-6 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)]">
+            <h2 className="font-heading text-3xl tracking-tight text-foreground">
               Equipo y medios
             </h2>
-            <ul className="mt-4 space-y-2 text-lg text-zinc-600">
+            <ul className="mt-4 space-y-2 text-base text-text-soft">
               <li>- Dron propio para producción audiovisual</li>
               <li>- Grabación en alta definición</li>
               <li>- Edición y entrega optimizada para digital</li>
@@ -58,19 +63,19 @@ export default function SobreMi() {
             </ul>
           </article>
 
-          <article className="border-t border-zinc-300 pt-8 md:col-span-2">
-            <h2 className="text-3xl tracking-tight text-zinc-900">
+          <article className="rounded-[1.75rem] border border-white/10 bg-surface/90 p-6 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)] md:col-span-2">
+            <h2 className="font-heading text-3xl tracking-tight text-foreground">
               Confianza profesional
             </h2>
             <div className="mt-4 grid gap-8 md:grid-cols-2">
               <div>
-                <p className="text-lg leading-relaxed text-zinc-600">
+                <p className="text-base leading-7 text-text-soft">
                   Cuento con experiencia en operaciones de vuelo y documentación
                   visual orientada a negocio. Actualmente amplio mi formación en
                   diseño gráfico para complementar cada proyecto audiovisual.
                 </p>
               </div>
-              <div className="space-y-2 text-lg text-zinc-600">
+              <div className="space-y-2 text-base text-text-soft">
                 <p>- Certificaciones y práctica continua de vuelo</p>
                 <p>- Cobertura nacional en España</p>
                 <p>- Contacto directo para briefing y presupuesto</p>

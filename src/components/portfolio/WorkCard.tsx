@@ -19,36 +19,37 @@ function urlForImage(source?: SanityImageSource | null) {
 
 export default function WorkCard({ work }: WorkCardProps) {
   return (
-    <Card className="overflow-hidden border border-zinc-200 bg-white pt-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      <div className="relative h-56 w-full overflow-hidden border-b border-zinc-200">
+    <Card className="overflow-hidden pt-0">
+      <div className="relative h-56 w-full overflow-hidden border-b border-white/10">
         <Image
           src={urlForImage(work.coverImage)}
           alt={work.title}
           fill
-          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+          className="object-cover object-center transition-transform duration-500 group-hover/card:scale-105"
         />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,15,18,0.08),rgba(13,15,18,0.58))]" />
       </div>
 
       <CardHeader className="pb-2">
-        <CardTitle className="text-2xl tracking-tight text-zinc-900">
+        <CardTitle className="text-2xl tracking-tight text-foreground">
           {work.title}
         </CardTitle>
-        <p className="text-sm font-medium tracking-wide text-zinc-400 uppercase">
+        <p className="text-xs font-medium uppercase tracking-[0.24em] text-brand/80">
           {work.serviceCategory}
         </p>
-        <p className="text-xs tracking-wide text-zinc-300 uppercase">
+        <p className="text-xs uppercase tracking-[0.18em] text-text-subtle">
           {work.subcategory}
         </p>
       </CardHeader>
 
       <CardContent className="pt-0">
-        <p className="text-base leading-relaxed text-zinc-500">
+        <p className="text-base leading-relaxed text-text-soft">
           Producción audiovisual aérea orientada a resultados visuales de alto
           impacto.
         </p>
         <Link
           href={`/portfolio/${work.slug}`}
-          className="mt-5 inline-flex items-center gap-2 border border-zinc-900 px-4 py-2 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-900 hover:text-white"
+          className="mt-5 inline-flex items-center gap-2 rounded-full border border-brand/25 bg-brand/10 px-4 py-2 text-sm font-medium text-brand transition-all hover:border-brand/40 hover:bg-brand/15"
         >
           Ver más
         </Link>
