@@ -9,7 +9,7 @@ export default function ContactCTA() {
         ¿Tienes un proyecto en mente?
       </h2>
       <p className="text-lg mb-6 text-gray-600 dark:text-gray-400">
-        Contáctanos para discutir cómo podemos ayudarte a llevar tu proyecto al
+        Contáctanos para ver cómo podemos ayudarte a llevar tu proyecto al
         siguiente nivel.
       </p>
       <Link

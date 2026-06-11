@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Play } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -8,11 +7,12 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <h1 className="max-w-[12ch] text-5xl leading-[1.03] tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl">
-            Perspectivas aereas unicas
+            Perspectivas aéreas únicas
           </h1>
           <p className="mt-8 max-w-[55ch] text-xl leading-relaxed text-zinc-500">
-            Creacion audiovisual especializada en captura de imagenes aereas con
-            drones. Transformo espacios en historias visuales desde el cielo.
+            Captura historias desde una nueva perspectiva. Combinamos
+            tecnología, precisión y creatividad para elevar la forma en que el
+            mundo ve tu proyecto.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -31,19 +31,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="group relative h-[520px] overflow-hidden bg-zinc-100 lg:h-[600px]">
-          <Image
-            src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhZXJpYWwlMjBkcm9uZSUyMGNpbmVtYXRvZ3JhcGh5fGVufDF8fHx8MTc4MDU2MDQ1Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Cinematografia aerea con dron"
-            fill
-            priority
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90">
-              <Play className="ml-1 h-6 w-6 text-black" />
-            </div>
-          </div>
+        <div className="group relative h-[520px] overflow-hidden bg-zinc-100 lg:h-[500px]">
+          <Image src="/images/drones/drone1.jpg" alt="Drone" fill />
         </div>
       </div>
     </section>

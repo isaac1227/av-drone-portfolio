@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +19,20 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-zinc-200 bg-[#f8f8f8]/95 backdrop-blur">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex h-20 items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/images/logo/logo-principal-removebg-preview.png"
+              alt="NATT Aerial Studio Logo"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
             <span className="text-[2rem] font-medium tracking-tight text-zinc-900">
-              AV Drone
+              NATT Aerial Studio
             </span>
           </div>
 
-          <div className="hidden items-center gap-10 md:flex">
+          <div className="hidden items-center gap-10 lg:flex">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -41,7 +49,7 @@ export default function Navbar() {
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Abrir o cerrar menu de navegacion"
             aria-expanded={isOpen}
-            className="inline-flex items-center justify-center rounded-lg border border-zinc-300 p-2 text-zinc-600 transition hover:bg-zinc-100 md:hidden"
+            className="inline-flex items-center justify-center rounded-lg border border-zinc-300 p-2 text-zinc-600 transition hover:bg-zinc-100 lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +69,7 @@ export default function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="space-y-1 border-t border-zinc-200 py-4 md:hidden">
+          <div className="space-y-1 border-t border-zinc-200 py-4 lg:hidden">
             {links.map((link) => (
               <Link
                 key={link.href}

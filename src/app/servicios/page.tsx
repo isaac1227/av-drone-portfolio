@@ -3,7 +3,7 @@ const serviceTypes = [
     id: "01",
     title: "Eventos",
     description:
-      "Cobertura audiovisual para momentos clave con tomas dinamicas y narrativa visual cinematografica.",
+      "Cobertura audiovisual para momentos clave con tomas dinámicas y narrativa visual cinematográfica.",
     types: [
       "Bodas",
       "Eventos corporativos",
@@ -15,11 +15,11 @@ const serviceTypes = [
     id: "02",
     title: "Inmobiliaria",
     description:
-      "Produccion orientada a venta y alquiler para destacar propiedades con imagenes de alto valor comercial.",
+      "Producción orientada a venta y alquiler para destacar propiedades con imágenes de alto valor comercial.",
     types: [
       "Viviendas",
       "Chalets",
-      "Apartamentos turisticos",
+      "Apartamentos turísticos",
       "Hoteles",
       "Promociones inmobiliarias",
     ],
@@ -28,19 +28,19 @@ const serviceTypes = [
     id: "03",
     title: "Parcelas y Terrenos",
     description:
-      "Documentacion visual precisa para seguimiento de superficie, estado del terreno e inspeccion inicial.",
+      "Documentación visual precisa para seguimiento de superficie, estado del terreno e inspección inicial.",
     types: [
       "Fincas",
-      "Terrenos rusticos",
+      "Terrenos rústicos",
       "Parcelas urbanas",
-      "Inspeccion visual",
+      "Inspección visual",
     ],
   },
   {
     id: "04",
-    title: "Fotografia y Video Aereo",
+    title: "Fotografía y Video aéreo",
     description:
-      "Contenido visual para marca y comunicacion digital, adaptado a objetivos de negocio y canales.",
+      "Contenido visual para marca y comunicación digital, adaptado a objetivos de negocio y canales.",
     types: ["Redes sociales", "Marketing", "Turismo", "Empresas"],
   },
 ];
@@ -55,7 +55,7 @@ export default function Servicios() {
           </h1>
           <p className="mt-8 max-w-[55ch] text-xl leading-relaxed text-zinc-500">
             Soluciones audiovisuales con dron pensadas para mostrar, documentar
-            y comunicar cada proyecto con una perspectiva unica.
+            y comunicar cada proyecto con una perspectiva única.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function Servicios() {
 
         <p className="mt-14 border-t border-zinc-200 pt-6 text-sm text-zinc-500">
           No publicamos precios en web. Cada proyecto se trabaja con presupuesto
-          personalizado segun objetivos, ubicacion y complejidad.
+          personalizado según objetivos, ubicación y complejidad.
         </p>
       </section>
     </main>

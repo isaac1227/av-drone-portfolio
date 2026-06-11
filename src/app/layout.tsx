@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AV Drone - Fotografía y Video Aéreo",
+  title: "NATT Aerial Studio",
   description:
     "Producción audiovisual aérea orientada a resultados visuales de alto impacto.",
 };

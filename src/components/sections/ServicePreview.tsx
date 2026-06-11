@@ -13,7 +13,7 @@ export default function ServicePreview() {
               Video aereo
             </h3>
             <p className="mt-4 text-xl leading-relaxed text-zinc-500">
-              Producciones cinematograficas con drones para publicidad,
+              Producciones cinematográficas con drones para publicidad,
               documentales y eventos corporativos.
             </p>
           </article>
@@ -24,7 +24,7 @@ export default function ServicePreview() {
               Fotografia aerea
             </h3>
             <p className="mt-4 text-xl leading-relaxed text-zinc-500">
-              Captura de imagenes aereas para arquitectura, bienes raices y
+              Captura de imágenes aéreas para arquitectura, bienes raíces y
               paisajes naturales.
             </p>
           </article>
@@ -35,7 +35,7 @@ export default function ServicePreview() {
               Inspecciones
             </h3>
             <p className="mt-4 text-xl leading-relaxed text-zinc-500">
-              Levantamientos tecnicos y documentacion visual de infraestructuras
+              Levantamientos técnicos y documentación visual de infraestructuras
               y terrenos.
             </p>
           </article>

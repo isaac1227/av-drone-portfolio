@@ -43,7 +43,7 @@ export default function WorkCard({ work }: WorkCardProps) {
 
       <CardContent className="pt-0">
         <p className="text-base leading-relaxed text-zinc-500">
-          Produccion audiovisual aerea orientada a resultados visuales de alto
+          Producción audiovisual aérea orientada a resultados visuales de alto
           impacto.
         </p>
         <Link

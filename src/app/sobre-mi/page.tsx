@@ -7,8 +7,8 @@ export default function SobreMi() {
             Sobre mi
           </h1>
           <p className="mt-8 max-w-[55ch] text-xl leading-relaxed text-zinc-500">
-            Natalia, creadora audiovisual especializada en fotografia y video
-            aereo con dron. Combino tecnica, sensibilidad visual y enfoque
+            Natalia, creadora audiovisual especializada en fotografía y video
+            aéreo con dron. Combino técnica, sensibilidad visual y enfoque
             comercial para proyectos que necesitan impacto real.
           </p>
         </div>
@@ -17,7 +17,7 @@ export default function SobreMi() {
           <article className="border-t border-zinc-300 pt-8">
             <h2 className="text-3xl tracking-tight text-zinc-900">Historia</h2>
             <p className="mt-4 text-lg leading-relaxed text-zinc-600">
-              Inicie este camino para mostrar lugares y proyectos desde una
+              Inicié este camino para mostrar lugares y proyectos desde una
               perspectiva diferente. Con cada vuelo busco transformar espacios
               en narrativas visuales que conecten con las personas.
             </p>
@@ -28,7 +28,7 @@ export default function SobreMi() {
               Experiencia
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-zinc-600">
-              He trabajado con inmobiliarias, alojamientos turisticos,
+              He trabajado con inmobiliarias, alojamientos turísticos,
               organizadores de eventos y negocios que necesitan contenido
               audiovisual profesional para vender mejor sus servicios.
             </p>
@@ -39,10 +39,10 @@ export default function SobreMi() {
               Servicios clave
             </h2>
             <ul className="mt-4 space-y-2 text-lg text-zinc-600">
-              <li>- Fotografia aerea profesional</li>
-              <li>- Video aereo para marketing y eventos</li>
+              <li>- Fotografía aérea profesional</li>
+              <li>- Video aéreo para marketing y eventos</li>
               <li>- Cobertura para parcelas y terrenos</li>
-              <li>- Produccion para redes sociales y marca</li>
+              <li>- Producción para redes sociales y marca</li>
             </ul>
           </article>
 
@@ -51,9 +51,9 @@ export default function SobreMi() {
               Equipo y medios
             </h2>
             <ul className="mt-4 space-y-2 text-lg text-zinc-600">
-              <li>- Dron propio para produccion audiovisual</li>
-              <li>- Grabacion en alta definicion</li>
-              <li>- Edicion y entrega optimizada para digital</li>
+              <li>- Dron propio para producción audiovisual</li>
+              <li>- Grabación en alta definición</li>
+              <li>- Edición y entrega optimizada para digital</li>
               <li>- Canal de YouTube con trabajos publicados</li>
             </ul>
           </article>
@@ -65,16 +65,16 @@ export default function SobreMi() {
             <div className="mt-4 grid gap-8 md:grid-cols-2">
               <div>
                 <p className="text-lg leading-relaxed text-zinc-600">
-                  Cuento con experiencia en operaciones de vuelo y documentacion
-                  visual orientada a negocio. Actualmente amplio mi formacion en
-                  diseno grafico para complementar cada proyecto audiovisual.
+                  Cuento con experiencia en operaciones de vuelo y documentación
+                  visual orientada a negocio. Actualmente amplio mi formación en
+                  diseño gráfico para complementar cada proyecto audiovisual.
                 </p>
               </div>
               <div className="space-y-2 text-lg text-zinc-600">
-                <p>- Certificaciones y practica continua de vuelo</p>
-                <p>- Cobertura nacional en Espana</p>
+                <p>- Certificaciones y práctica continua de vuelo</p>
+                <p>- Cobertura nacional en España</p>
                 <p>- Contacto directo para briefing y presupuesto</p>
-                <p>- Publicacion activa de trabajos en redes y YouTube</p>
+                <p>- Publicación activa de trabajos en redes y YouTube</p>
               </div>
             </div>
           </article>
