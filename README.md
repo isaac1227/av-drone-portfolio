@@ -127,6 +127,7 @@ npm run build
 | `NEXT_PUBLIC_SANITY_PROJECT_ID`  | Sí si se usa Sanity localmente | Identificador del proyecto Sanity |
 | `NEXT_PUBLIC_SANITY_DATASET`     | Sí si se usa Sanity localmente | Dataset activo de Sanity          |
 | `NEXT_PUBLIC_SANITY_API_VERSION` | No                             | Versión de API para Sanity        |
+| `SANITY_REVALIDATE_SECRET`       | Sí en producción               | Protección del endpoint de revalidación on-demand |
 | `RESEND_API_KEY`                 | Sí para enviar formularios     | Autenticación contra Resend       |
 | `CONTACT_TO_EMAIL`               | Sí para enviar formularios     | Destinatario de los mensajes      |
 | `CONTACT_FROM_EMAIL`             | No                             | Remitente visible en los correos  |
@@ -134,6 +135,21 @@ npm run build
 ## Deployment
 
 El despliegue está pensado para Vercel. El flujo es simple: conectar el repositorio, configurar las variables de entorno, dejar que Vercel ejecute el build de Next.js y publicar la rama principal. Las preview deployments sirven para revisar cambios visuales, SEO y contenido antes de pasar a producción.
+
+### Sanity on-demand revalidation
+
+- Endpoint: `/api/revalidate` (método `POST`).
+- Seguridad: `Authorization: Bearer <SANITY_REVALIDATE_SECRET>`.
+- Payload recomendado desde Sanity webhook:
+
+```json
+{
+	"_type": "work",
+	"slug": "mi-slug"
+}
+```
+
+- Se revalidan automáticamente `/`, `/portfolio`, `/portfolio/[slug]` y `/sitemap.xml`.
 
 ## Future Improvements
 

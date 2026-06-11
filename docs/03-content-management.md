@@ -39,3 +39,4 @@ Los enlaces sociales del footer están en `src/components/layout/Footer.tsx`.
 - Revisa que cada trabajo tenga categoría y fecha antes de publicarlo.
 - Si un trabajo no tiene imagen principal, el sitio usa una imagen de respaldo.
 - Evita duplicar contenido entre home, servicios y portfolio salvo que sea necesario.
+- Al publicar/editar/eliminar `work` en Sanity, el webhook dispara revalidación on-demand en Next.js para actualizar producción sin esperar intervalos.
