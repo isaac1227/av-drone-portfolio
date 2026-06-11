@@ -121,16 +121,16 @@ npm run build
 
 ## Environment Variables
 
-| Variable                         | Requerida                      | Uso                               |
-| -------------------------------- | ------------------------------ | --------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`           | No                             | URL canónica del sitio para SEO   |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID`  | Sí si se usa Sanity localmente | Identificador del proyecto Sanity |
-| `NEXT_PUBLIC_SANITY_DATASET`     | Sí si se usa Sanity localmente | Dataset activo de Sanity          |
-| `NEXT_PUBLIC_SANITY_API_VERSION` | No                             | Versión de API para Sanity        |
+| Variable                         | Requerida                      | Uso                                               |
+| -------------------------------- | ------------------------------ | ------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`           | No                             | URL canónica del sitio para SEO                   |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID`  | Sí si se usa Sanity localmente | Identificador del proyecto Sanity                 |
+| `NEXT_PUBLIC_SANITY_DATASET`     | Sí si se usa Sanity localmente | Dataset activo de Sanity                          |
+| `NEXT_PUBLIC_SANITY_API_VERSION` | No                             | Versión de API para Sanity                        |
 | `SANITY_REVALIDATE_SECRET`       | Sí en producción               | Protección del endpoint de revalidación on-demand |
-| `RESEND_API_KEY`                 | Sí para enviar formularios     | Autenticación contra Resend       |
-| `CONTACT_TO_EMAIL`               | Sí para enviar formularios     | Destinatario de los mensajes      |
-| `CONTACT_FROM_EMAIL`             | No                             | Remitente visible en los correos  |
+| `RESEND_API_KEY`                 | Sí para enviar formularios     | Autenticación contra Resend                       |
+| `CONTACT_TO_EMAIL`               | Sí para enviar formularios     | Destinatario de los mensajes                      |
+| `CONTACT_FROM_EMAIL`             | No                             | Remitente visible en los correos                  |
 
 ## Deployment
 
@@ -144,8 +144,8 @@ El despliegue está pensado para Vercel. El flujo es simple: conectar el reposit
 
 ```json
 {
-	"_type": "work",
-	"slug": "mi-slug"
+  "_type": "work",
+  "slug": "mi-slug"
 }
 ```
 
