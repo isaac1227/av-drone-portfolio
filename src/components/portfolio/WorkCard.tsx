@@ -23,9 +23,10 @@ export default function WorkCard({ work }: WorkCardProps) {
       <div className="relative h-56 w-full overflow-hidden border-b border-white/10">
         <Image
           src={urlForImage(work.coverImage)}
-          alt={work.title}
+          alt={`${work.title} - fotografía aérea con dron`}
           fill
           className="object-cover object-center transition-transform duration-500 group-hover/card:scale-105"
+          sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,15,18,0.08),rgba(13,15,18,0.58))]" />
       </div>

@@ -55,9 +55,10 @@ export default async function FeatureWorks() {
                 <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <Image
                     src={getImageUrl(work.coverImage)}
-                    alt={work.title}
+                    alt={`${work.title} - proyecto de fotografía y vídeo con dron`}
                     fill
                     className="object-cover transition-transform duration-500 group-hover/card:scale-105"
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,15,18,0.1),rgba(13,15,18,0.6))]" />
                 </div>

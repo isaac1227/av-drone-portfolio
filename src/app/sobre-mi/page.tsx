@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+
+import { buildPageMetadata, seoPages } from "@/lib/seo";
+
+export function generateMetadata(): Metadata {
+  return buildPageMetadata(seoPages.about);
+}
+
 export default function SobreMi() {
   return (
     <main className="px-6 pb-20 pt-16 lg:px-10 lg:pt-20">
@@ -6,8 +15,8 @@ export default function SobreMi() {
           <p className="font-heading text-xs uppercase tracking-[0.36em] text-brand/80">
             Sobre mí
           </p>
-          <h1 className="mt-4 max-w-[12ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
-            Sobre mi
+          <h1 className="mt-4 max-w-[18ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
+            Sobre mí y mi trabajo con dron
           </h1>
           <p className="mt-8 max-w-[55ch] text-lg leading-8 text-text-soft sm:text-xl">
             Natalia, creadora audiovisual especializada en fotografía y video
@@ -81,6 +90,28 @@ export default function SobreMi() {
                 <p>- Contacto directo para briefing y presupuesto</p>
                 <p>- Publicación activa de trabajos en redes y YouTube</p>
               </div>
+            </div>
+          </article>
+
+          <article className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-surface/90 shadow-[0_22px_70px_-42px_rgba(0,0,0,0.8)] md:col-span-2">
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                src="/images/drones/drone2.jpg"
+                alt="Dron de producción audiovisual en operación"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1200px"
+                priority={false}
+              />
+            </div>
+            <div className="p-6">
+              <h2 className="font-heading text-3xl tracking-tight text-foreground">
+                Dron en uso
+              </h2>
+              <p className="mt-3 text-base leading-7 text-text-soft">
+                Este es el segundo dron del equipo, dedicado a tomas estables y
+                producción audiovisual para proyectos comerciales.
+              </p>
             </div>
           </article>
         </div>

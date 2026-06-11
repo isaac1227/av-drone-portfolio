@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+
+import { buildPageMetadata, seoPages } from "@/lib/seo";
+
 const serviceTypes = [
   {
     id: "01",
@@ -45,6 +49,10 @@ const serviceTypes = [
   },
 ];
 
+export function generateMetadata(): Metadata {
+  return buildPageMetadata(seoPages.services);
+}
+
 export default function Servicios() {
   return (
     <main className="px-6 pb-20 pt-16 lg:px-10 lg:pt-20">
@@ -53,8 +61,8 @@ export default function Servicios() {
           Servicios
         </p>
         <div className="mt-4">
-          <h1 className="max-w-[12ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
-            Servicios
+          <h1 className="max-w-[16ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
+            Servicios de fotografía y vídeo con dron
           </h1>
           <p className="mt-8 max-w-[55ch] text-lg leading-8 text-text-soft sm:text-xl">
             Soluciones audiovisuales con dron pensadas para mostrar, documentar

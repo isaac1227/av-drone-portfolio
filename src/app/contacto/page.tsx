@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
+
+import { buildPageMetadata, seoPages } from "@/lib/seo";
 import ContactForm from "./ContactForm";
+
+export function generateMetadata(): Metadata {
+  return buildPageMetadata(seoPages.contact);
+}
 
 export default function Contacto() {
   return (
@@ -8,8 +15,8 @@ export default function Contacto() {
           <p className="font-heading text-xs uppercase tracking-[0.36em] text-brand/80">
             Contacto
           </p>
-          <h1 className="mt-4 max-w-[12ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
-            Contacto
+          <h1 className="mt-4 max-w-[18ch] font-heading text-5xl leading-[0.92] tracking-[-0.04em] text-foreground sm:text-6xl lg:text-7xl">
+            Contacto y presupuesto para tu proyecto
           </h1>
           <p className="mt-8 max-w-[55ch] text-lg leading-8 text-text-soft sm:text-xl">
             Cuéntame tu proyecto y te responderé con una propuesta ajustada a

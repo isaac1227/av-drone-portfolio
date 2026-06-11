@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,15,18,0.08),rgba(13,15,18,0.72))]" />
             <Image
               src="/images/drones/drone1.jpg"
-              alt="Toma aérea con dron"
+              alt="Fotografía aérea con dron mostrando una perspectiva cinematográfica"
               width={1200}
               height={1400}
               className="h-[560px] w-full object-cover object-center"

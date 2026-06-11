@@ -2,9 +2,53 @@ import type { SanityImageSource } from "@sanity/image-url";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  buildImageUrl,
+  buildPageMetadata,
+  getWorkJsonLd,
+  seoPages,
+} from "@/lib/seo";
 import { safeUrlFor } from "@/sanity/lib/image";
 import { getWorkBySlug } from "@/sanity/lib/works";
+
+export async function generateStaticParams() {
+  const { getWorks } = await import("@/sanity/lib/works");
+  const works = await getWorks();
+
+  return works
+    .filter((work) => Boolean(work.slug))
+    .map((work) => ({ slug: work.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const work = await getWorkBySlug(slug);
+
+  if (!work) {
+    return buildPageMetadata({
+      ...seoPages.portfolio,
+      title: "Proyecto no encontrado | NATT Aerial Studio",
+      description: "El proyecto solicitado no existe o no está publicado.",
+      path: "/portfolio",
+    });
+  }
+
+  return buildPageMetadata({
+    title: `${work.title} | NATT Aerial Studio`,
+    description: `${work.description} Proyecto de ${work.serviceCategory} en ${work.location || "España"}.`,
+    path: `/portfolio/${work.slug}`,
+    type: "article",
+    image: buildImageUrl(work.coverImage),
+    imageAlt: `${work.title} - fotografía aérea con dron`,
+  });
+}
 
 const categoryLabels: Record<string, string> = {
   eventos: "Eventos",
@@ -85,6 +129,7 @@ export default async function WorkPage({
 
   return (
     <main className="px-6 pb-20 pt-16 lg:px-10 lg:pt-20">
+      <JsonLd data={getWorkJsonLd(work)} />
       <section className="mx-auto max-w-7xl">
         <Link
           href="/portfolio"

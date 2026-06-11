@@ -10,6 +10,17 @@ export default function Footer() {
             Fotografía y vídeo con dron para marcas, proyectos y espacios que
             necesitan una presencia visual precisa y cinematográfica.
           </p>
+          <p className="mt-3 text-xs text-text-subtle/80">
+            Diseño y desarrollo web por{" "}
+            <a
+              href="https://www.linkedin.com/in/isaac-marroqui-penalva/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-4 transition hover:text-foreground hover:underline"
+            >
+              Isaac Marroquí
+            </a>
+          </p>
         </div>
         <div className="flex items-center gap-6 text-sm text-text-subtle">
           <a href="#" className="transition hover:text-foreground">
